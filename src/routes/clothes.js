@@ -8,7 +8,7 @@ const getCloth = async (req, res, next) => {
     const id = req.params.id;
     const item = await cloth.read(id);
     if (!item.rowCount) {
-      res.status(200).json({ error: `There is no data :/` });
+      res.status(200).json({ error: `here is no data :/` });
     } else {
       res.status(200).json(item.rows);
     }
@@ -24,7 +24,7 @@ const createCloth = async (req, res, next) => {
       dataObj.description = "";
     }
     const item = await cloth.create(dataObj);
-    res.status(200).json(item.rows[0]);
+    res.status(200).json(item);
   } catch (err) {
     next(err);
   }
