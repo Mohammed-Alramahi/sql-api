@@ -7,7 +7,11 @@ const getFood = async (req, res, next) => {
   try {
     const id = req.params.id || null;
     const item = await food.read(id);
-    res.status(200).json(item.rows);
+    if (!item.rowCount) {
+      res.status(200).json({ error: `There is no data :/` });
+    } else {
+      res.status(200).json(item.rows);
+    }
   } catch (err) {
     next(err);
   }
