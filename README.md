@@ -10,4 +10,4 @@ simple api crud app with postgres and express
 
 https://ramahi-sql-api.herokuapp.com/
 
-https://github.com/Mohammed-Alramahi/sql-api/pull/3
+https://github.com/Mohammed-Alramahi/sql-api/pull/5
