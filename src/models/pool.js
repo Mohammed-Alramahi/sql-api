@@ -1,9 +1,10 @@
 const pg = require("pg");
 require("dotenv").config();
+const connection = process.env.DATABASE_URL;
 pg.defaults.ssl = {
   rejectUnauthorized: false,
 };
 const pgPool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: connection,
 });
 module.exports = pgPool;
