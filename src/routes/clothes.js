@@ -24,7 +24,7 @@ const createCloth = async (req, res, next) => {
       dataObj.description = "";
     }
     const item = await cloth.create(dataObj);
-    res.status(200).json(item);
+    res.status(200).json(item.rows[0]);
   } catch (err) {
     next(err);
   }
